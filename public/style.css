@@ -1,7 +1,22 @@
-
-
-
 /* -------------------- Navigation Styles -------------------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #000;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
 nav {
     position: fixed;
     top: 0;
@@ -299,7 +314,7 @@ h6 {
 }
 
 /* Styles for the boxes themselves */
-.box {
+.box { /*These are boxes on the home screen, the 4 sections currently*/
     flex-shrink: 0;
     width: 300px;
     height: 300px;
@@ -314,15 +329,6 @@ h6 {
 
 .box img {
     filter: grayscale(100%);
-}
-
-/***** end Section2 *****/  
-
-.robot {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: smaller;
-    margin: 0;
-    padding: 0;
 }
 
 .services {
@@ -404,7 +410,7 @@ footer {
 
 
 
-
+/*-------------------- Accordion Styles for Services -------------------- */
 .accordion-container {
     display: flex;
     flex-direction: column;
@@ -468,4 +474,84 @@ summary .icon::after {
     color: #82d3f3;
     text-decoration: none;
     text-decoration-thickness: 1px;
+}
+
+/* -------------------- Responsive Mobile Views -------------------- */
+/* Tablet */
+@media (max-width: 1032px) {
+  .main-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger span {
+    background: #fff;
+  }
+
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .nav-list li {
+    margin-left: 0;
+  }
+
+  .nav-list.open {
+    display: flex;
+  }
+
+  /* turns into an X when open */
+  .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  .scrolling-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .box {
+    flex: 0 0 auto;
+    min-width: 45%;
+    scroll-snap-align: center;
+  }
+}
+
+/* Phone: only what changes from tablet */
+@media (max-width: 600px) {
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .intro h3 {
+    font-size: 1.1rem;
+  }
+
+  .box {
+    min-width: 70%;
+    padding: 20px;
+  }
+
+  .box img {
+    width: 100px;
+  }
+
+  .box h4 {
+    font-size: 0.9rem;
+  }
 }
