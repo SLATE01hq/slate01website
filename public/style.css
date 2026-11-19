@@ -1,0 +1,471 @@
+
+
+
+/* -------------------- Navigation Styles -------------------- */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: #000000;
+    z-index: 1000;
+}
+
+.main-nav {
+    background-color: #000000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box; /* Keeps padding inside the 100% width so it doesn't overflow */
+    padding: 0 15%; /* Creates space on the left and right without changing height */
+    z-index: 1000;
+}
+
+
+.nav-list {
+    list-style: none; /* Remove bullet points */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Make list items display in a row */
+
+}
+
+.nav-list li {
+    margin-left: 2rem; /* Space between nav items */
+}
+
+.nav-link {
+    color: #fff; /* White color for links */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.0rem; /* Font size for links */
+    padding: 0.5rem 0; /* Padding for click area */
+    position: relative; /* Needed for hover effect */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.nav-link2 {
+    color: #000000; /* White color for links */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.0rem; /* Font size for links */
+    padding: 0.5rem 0; /* Padding for click area */
+    position: relative; /* Needed for hover effect */
+    transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.nav-link:hover {
+    color: #8499a2; /* Lighter blue on hover */
+}
+
+.nav-link2:hover {
+    color: #8499a2; /* Lighter blue on hover */
+}
+
+/* Modern Underline Hover Effect */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #d8f8fc; /* Underline color */
+    left: 50%; /* Start from center */
+    bottom: 0;
+    transform: translateX(-50%); /* Center the underline */
+    transition: width 0.3s ease; /* Smooth width transition */
+}
+
+.nav-link:hover::after {
+    width: 100%; /* Expand to full width on hover */
+}
+
+.nav-link2:hover::after {
+    width: 100%; /* Expand to full width on hover */
+}
+
+
+/* -------------------- Main Content Styles -------------------- */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    background-image: linear-gradient(to bottom, #ffffff, rgb(123, 161, 196));
+
+}
+
+main {
+    display: grid;
+    width: 100%;
+    flex: 1; /* Stretches <main> to fill any leftover vertical space */
+    padding-top: 70px;
+    box-sizing: border-box;
+    margin: 0;
+    padding-bottom: 0;
+}
+
+section {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    width: 100%;       /* Forces every section to stretch edge-to-edge */
+    max-width: 100%;
+    border-radius: 0;
+    display: grid;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.section1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    min-height: 40vh; /*was originally 60vh */
+    margin: 0;
+    padding: 0px 0px;
+    gap: 0px;
+    box-sizing: border-box;
+    text-align: center;
+    background-image: url('images/backgroundhome.png');
+    background-size: cover;
+}
+
+
+.section1-about {
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Centers the two photos + bio column */
+    align-items: flex-start; /* Aligns photos to the top instead of floating in the middle */
+    padding: 60px 20px;
+    gap: 40px;
+    background-color: transparent;
+    box-sizing: border-box;
+}
+
+.about {
+    max-width: 600px;
+    text-align: left;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+}
+
+.about b {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.about-image {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.about-image img {
+    border-radius: 5px;
+    border-top: 9px solid #ffffff;
+    border-right: 9px solid rgb(255, 255, 255);
+    border-left: 9px solid rgb(255, 255, 255);
+    border-bottom: 25px solid rgb(255, 255, 255);
+    box-shadow: 0 4px 8px rgba(158, 148, 148, 0.1);
+}
+
+b {
+    color: #000000;
+    font-size: large;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+}
+
+p {
+    font-size: 1.4em;
+    font-weight: normal;
+}
+
+
+h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h2 {
+    font-size: 1.8em;
+    color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+    font-size: 1.8em;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    color: #000000;
+}
+
+h4 {
+    font-size: 1.1em;
+    color: #ffffff;
+    font-weight: lighter;
+}
+
+h5 {
+    font-size: 1.0em;
+    color: #000000;
+    font-weight: lighter;
+    font-style: italic;
+}
+
+h6 {
+    font-size: 1.0em;
+    font-weight: semi-bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    color: #000000;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+    padding: 0;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.introimage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    -webkit-mask-image: radial-gradient(ellipse, black 20%, transparent 65%);
+    mask-image: radial-gradient(ellipse, black 20%, transparent 65%);
+}
+
+.introimage img {
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+    max-width: 490px;
+    height: auto;
+    margin: 0 auto;
+    filter: grayscale(100%);
+}
+
+.intro h4 {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.intro h2 {
+    margin: 0 0 6px;
+    font-size: 2.2em;
+    text-align: left;
+}
+
+/* ---- Section2: Horizontal Scrolling Boxes with Blur Effect ---- */
+.section2 {
+    place-items: center;
+    background-color: black;
+    width: 100%;
+    color: #ffffff;
+}
+
+/* Scrolling container and blur effect */
+.scrolling-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    overflow-x: none;
+    white-space: nowrap;
+    width: 80%;
+    padding: 10px;
+    background-color: transparent;
+}
+
+/* Styles for the boxes themselves */
+.box {
+    flex-shrink: 0;
+    width: 300px;
+    height: 300px;
+    margin: 0;
+    background-color: black;
+    display: inline-block;
+    white-space: normal;
+    place-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.box img {
+    filter: grayscale(100%);
+}
+
+/***** end Section2 *****/  
+
+.robot {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: smaller;
+    margin: 0;
+    padding: 0;
+}
+
+.services {
+    place-items: left;
+    padding-top: 0px;
+    padding-bottom: 2cqi;
+    text-align: left;
+    margin: 0;
+    background-color: transparent;
+}
+
+
+.services-list h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+li {
+    list-style-type: none;
+}
+
+.services-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px 20px;
+    background-color: transparent;
+}
+
+.location {
+    align-items: center;
+    display: flex;
+    text-align: center;
+    font-size: 1.5em;
+    padding: 10px;
+    background-color: rgb(139, 136, 136);
+    max-height: fit-content;
+}
+
+#address-box {
+    background-color: transparent;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2em;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.contact {
+    background-color: rgb(139, 136, 136);
+    text-align: left;
+    padding: 30px;
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+}
+
+footer {
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 40px;
+    padding-top: 20px;
+}
+
+
+
+
+
+
+.accordion-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.accordion-item {
+    background-color: #fffafc; /* Light pinkish-white tint, adjust to match your theme */
+    border: 2px solid #99deeb;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+}
+
+/* Open state border change */
+.accordion-item[open] {
+    border-color: #000000;
+}
+
+summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    font-weight: 600;
+    color: #000000;
+    cursor: pointer;
+    list-style: none; /* Hides default triangle marker in some browsers */
+}
+
+/* Hides default Safari/Chrome arrow marker */
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Plus/Close icon styling using CSS pseudo-elements */
+summary .icon::after {
+    content: "+";
+    font-size: 20px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.accordion-item[open] summary .icon::after {
+    content: "×"; /* Changes to an 'x' when open */
+    font-size: 22px;
+}
+
+.accordion-content {
+    padding: 0 24px 20px 24px;
+    color: #000000;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.accordion-content a {
+    color: #82d3f3;
+    text-decoration: none;
+    text-decoration-thickness: 1px;
+}
